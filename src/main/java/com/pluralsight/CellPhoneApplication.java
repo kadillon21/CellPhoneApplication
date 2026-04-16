@@ -10,21 +10,24 @@ public class CellPhoneApplication {
 
         CellPhone usersPhone = new CellPhone();
 
-        /*
-         usersPhone.setSerialNumber(scanner.nextInt());
-         usersPhone.setModel(scanner.nextLine());
-         usersPhone.setCarrier(scanner.nextLine());
-         usersPhone.setPhoneNumber(scanner.nextInt());
-         usersPhone.setOwner(scanner.nextLine());
-        */
+        System.out.print("What is the serial number?: ");
+        usersPhone.setSerialNumber(scanner.nextInt());
+        scanner.nextLine();
+        System.out.print("What model is the phone?: ");
+        usersPhone.setModel(scanner.nextLine());
+        System.out.print("Who is the carrier?: ");
+        usersPhone.setCarrier(scanner.nextLine());
+        System.out.print("What is the phone number?: ");
+        usersPhone.setPhoneNumber(scanner.nextLine());
+        System.out.print("Who is the owner of the phone?: ");
+        usersPhone.setOwner(scanner.nextLine());
 
-        System.out.println("What is the serial number?: ");
-        usersPhone.setSerialNumber();
-        System.out.println("What model is the phone?: ");
-        System.out.println("Who is the carrier?: ");
-        System.out.println("What is the phone number?: ");
-        System.out.println("Who is the owner of the phone?: ");
 
+        System.out.println(usersPhone.getModel());
+        System.out.println(usersPhone.getOwner());
+        System.out.println(usersPhone.getSerialNumber());
+        System.out.println(usersPhone.getCarrier());
+        System.out.println(usersPhone.getPhoneNumber());
     }
 
 }
