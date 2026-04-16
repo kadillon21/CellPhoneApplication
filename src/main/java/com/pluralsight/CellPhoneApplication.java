@@ -8,13 +8,20 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        CellPhone usersPhone = new CellPhone();
+        CellPhone cellPhone1 = new CellPhone();
+        CellPhone cellPhone2 = new CellPhone();
 
-        addPhoneNumber(scanner, usersPhone);
-        phoneInformation(usersPhone);
+        addPhone(scanner, cellPhone1);
+        addPhone(scanner, cellPhone2);
+        display(cellPhone1);
+        display(cellPhone2);
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
+
+
     }
 
-    public static void addPhoneNumber(Scanner scanner, CellPhone usersPhone){
+    public static void addPhone(Scanner scanner, CellPhone usersPhone){
 
         System.out.print("What is the serial number?: ");
         usersPhone.setSerialNumber(scanner.nextInt());
@@ -31,7 +38,7 @@ public class CellPhoneApplication {
 
     }
 
-    public static void phoneInformation(CellPhone userPhone){
+    public static void display(CellPhone userPhone){
 
         String RED = "\u001B[31m";
         String RESET = "\u001B[0m";
@@ -41,7 +48,7 @@ public class CellPhoneApplication {
         System.out.println("Carrier: " + RED + userPhone.getCarrier() + RESET);
         System.out.println("Phone Number: " + RED + userPhone.getPhoneNumber() + RESET);
         System.out.println("Owner: " + RED + userPhone.getOwner() + RESET);
-
+        System.out.println();
 
     }
 
