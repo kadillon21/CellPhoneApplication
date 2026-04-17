@@ -2,11 +2,11 @@ package com.pluralsight;
 
 public class CellPhone {
 
-    public int serialNumber;
-    public String model;
-    public String carrier;
-    public String phoneNumber;
-    public String owner;
+    private int serialNumber;
+    private String model;
+    private String carrier;
+    private String phoneNumber;
+    private String owner;
     String RED = "\u001B[31m";
     String RESET = "\u001B[0m";
 
