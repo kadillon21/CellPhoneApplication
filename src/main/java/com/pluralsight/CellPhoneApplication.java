@@ -17,10 +17,9 @@ public class CellPhoneApplication {
         display(cellPhone1);
         display(cellPhone2);
         display(workPhone);
-        workPhone.dial(cellPhone2.getPhoneNumber());
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
-
+        workPhone.dial(cellPhone2);
 
     }
 
@@ -45,8 +44,8 @@ public class CellPhoneApplication {
 
     public static void display(CellPhone userPhone){
 
-        String RED = "\u001B[31m";
-        String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String RESET = "\u001B[0m";
 
         System.out.println("Serial Number: " + RED + userPhone.getSerialNumber() + RESET);
         System.out.println("Model: " + RED + userPhone.getModel() + RESET);
@@ -60,7 +59,7 @@ public class CellPhoneApplication {
     public static void numberFormatter(String phoneNumber, CellPhone usersPhone, Scanner scanner){
 
         while (phoneNumber.length() != 10){
-            System.out.println("Invalid phone number please try again (must be 10 digits ex. 3128456543)");
+            System.out.print("Invalid phone number please try again (must be 10 digits ex. 3128456543): ");
             phoneNumber = scanner.nextLine();
         }
 

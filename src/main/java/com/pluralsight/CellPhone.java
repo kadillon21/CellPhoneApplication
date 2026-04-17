@@ -71,4 +71,8 @@ public class CellPhone {
     public void dial(String phoneNumber){
         System.out.println(getOwner() + "'s phone is calling " + RED +  phoneNumber + RESET);
     }
+
+    public void dial(CellPhone phone){
+        System.out.println(getOwner() + "'s phone is calling " + RED +  phone.phoneNumber + RESET);
+    }
 }
