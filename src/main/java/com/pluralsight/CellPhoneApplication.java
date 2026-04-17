@@ -10,11 +10,14 @@ public class CellPhoneApplication {
         Scanner scanner = new Scanner(System.in);
         CellPhone cellPhone1 = new CellPhone();
         CellPhone cellPhone2 = new CellPhone();
+        CellPhone workPhone = new CellPhone(39488540, "iPhone 17", "T Mobile", "(773) 543-9485", "Year Up");
 
         addPhone(scanner, cellPhone1);
         addPhone(scanner, cellPhone2);
         display(cellPhone1);
         display(cellPhone2);
+        display(workPhone);
+        workPhone.dial(cellPhone2.getPhoneNumber());
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
 
@@ -61,10 +64,8 @@ public class CellPhoneApplication {
             phoneNumber = scanner.nextLine();
         }
 
-        if (phoneNumber.length() == 10){
-            String formatterNumber = "(" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6, 10);
-            usersPhone.setPhoneNumber(formatterNumber);
-        }
+        String formatNumber = "(" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6, 10);
+        usersPhone.setPhoneNumber(formatNumber);
 
 
     }
