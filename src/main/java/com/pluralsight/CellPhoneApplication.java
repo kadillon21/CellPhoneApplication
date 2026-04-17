@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class CellPhoneApplication {
@@ -46,11 +45,11 @@ public class CellPhoneApplication {
     public static void display(CellPhone userPhone){
 
 
-        System.out.println("Serial Number: " + ColorUtilities.RED + userPhone.getSerialNumber() + ColorUtilities.RESET);
-        System.out.println("Model: " + ColorUtilities.RED + userPhone.getModel() + ColorUtilities.RESET);
-        System.out.println("Carrier: " + ColorUtilities.RED + userPhone.getCarrier() + ColorUtilities.RESET);
-        System.out.println("Phone Number: " + ColorUtilities.RED + userPhone.getPhoneNumber() + ColorUtilities.RESET);
-        System.out.println("Owner: " + ColorUtilities.RED + userPhone.getOwner() + ColorUtilities.RESET);
+        System.out.println("Serial Number: " + ConsoleUtilities.RED + userPhone.getSerialNumber() + ConsoleUtilities.RESET);
+        System.out.println("Model: " + ConsoleUtilities.RED + userPhone.getModel() + ConsoleUtilities.RESET);
+        System.out.println("Carrier: " + ConsoleUtilities.RED + userPhone.getCarrier() + ConsoleUtilities.RESET);
+        System.out.println("Phone Number: " + ConsoleUtilities.RED + userPhone.getPhoneNumber() + ConsoleUtilities.RESET);
+        System.out.println("Owner: " + ConsoleUtilities.RED + userPhone.getOwner() + ConsoleUtilities.RESET);
         System.out.println();
 
     }

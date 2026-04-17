@@ -1,7 +1,5 @@
 package com.pluralsight;
 
-import java.awt.*;
-
 public class CellPhone {
 
     private int serialNumber;
@@ -69,10 +67,10 @@ public class CellPhone {
     }
 
     public void dial(String phoneNumber){
-        System.out.println(getOwner() + "'s phone is calling " + ColorUtilities.RED +  phoneNumber + ColorUtilities.RESET);
+        System.out.println(getOwner() + "'s phone is calling " + ConsoleUtilities.RED +  phoneNumber + ConsoleUtilities.RESET);
     }
 
     public void dial(CellPhone phone){
-        System.out.println(getOwner() + "'s phone is calling " + ColorUtilities.RED +  phone.phoneNumber + ColorUtilities.RESET);
+        System.out.println(getOwner() + "'s phone is calling " + ConsoleUtilities.RED + phone.phoneNumber + ConsoleUtilities.RESET);
     }
 }
