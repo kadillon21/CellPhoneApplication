@@ -27,13 +27,15 @@ public class CellPhoneApplication {
         usersPhone.setSerialNumber(scanner.nextInt());
         scanner.nextLine();
         System.out.print("What model is the phone?: ");
-        usersPhone.setModel(scanner.nextLine());
+        usersPhone.setModel(scanner.nextLine().trim());
         System.out.print("Who is the carrier?: ");
-        usersPhone.setCarrier(scanner.nextLine());
+        usersPhone.setCarrier(scanner.nextLine().trim());
         System.out.print("What is the phone number?: ");
-        usersPhone.setPhoneNumber(scanner.nextLine());
+        String phoneNumber = scanner.nextLine().trim();
+        numberFormatter(phoneNumber, usersPhone, scanner);
         System.out.print("Who is the owner of the phone?: ");
-        usersPhone.setOwner(scanner.nextLine());
+        usersPhone.setOwner(scanner.nextLine().trim());
+
         System.out.println();
 
     }
@@ -49,6 +51,21 @@ public class CellPhoneApplication {
         System.out.println("Phone Number: " + RED + userPhone.getPhoneNumber() + RESET);
         System.out.println("Owner: " + RED + userPhone.getOwner() + RESET);
         System.out.println();
+
+    }
+
+    public static void numberFormatter(String phoneNumber, CellPhone usersPhone, Scanner scanner){
+
+        while (phoneNumber.length() != 10){
+            System.out.println("Invalid phone number please try again (must be 10 digits ex. 3128456543)");
+            phoneNumber = scanner.nextLine();
+        }
+
+        if (phoneNumber.length() == 10){
+            String formatterNumber = "(" + phoneNumber.substring(0, 3) + ") " + phoneNumber.substring(3, 6) + "-" + phoneNumber.substring(6, 10);
+            usersPhone.setPhoneNumber(formatterNumber);
+        }
+
 
     }
 
